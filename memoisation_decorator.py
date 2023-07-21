@@ -15,7 +15,7 @@ def memo_key(*args, **kwargs) -> str:
     a better key, but this isn't the
     point of this repo
     """
-    return repr(args) + repr(kwargs)
+    return repr(args) + repr(sorted(kwargs))
 
 def memoize(func: FunctionType) -> FunctionType:
     memo = {}
@@ -33,4 +33,4 @@ if __name__ == "__main__":
     print(memo_key('hello', 5, 'world', 1))
     print(memo_key("hello', 5, 'world", 1))
 
-    print(memo_key({'a': 4, 'b': 5}) == memo_key({'b': 5, 'a': 4}))
+    print(memo_key(a = 4, b = 5) == memo_key(b = 5, a = 4))
