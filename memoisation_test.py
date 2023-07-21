@@ -27,8 +27,6 @@ def test_one():
     memo_slow_add_one(1)   # takes 3 seconds
     memo_slow_add_one(1)   # runs instantly
 
-    print()
-
 
 @memoize
 def _fibonacci(n: int):
@@ -48,11 +46,11 @@ def fibonacci(n: int):
 def test_two():
     print("fibonacci")
     print("---------")
-
     fibonacci(20)   # ~2.3 seconds
     fibonacci(25)   # ~0.5 seconds, even though it's bigger
 
 
 if __name__ == "__main__":
     test_one()
+    print()
     test_two()
